@@ -2,12 +2,13 @@ import type { Provider } from "@wagmi/core";
 import { useConnectWallet, useSetChain } from "@web3-onboard/react";
 import { Connector } from "clients/web3";
 import { AuthModal } from "components/AuthModal";
+import config from "configPolygon";
 import { Signer, getDefaultProvider, ethers } from "ethers";
 import useCopyToClipboard from "hooks/useCopyToClipboard";
 import noop from "noop-ts";
 import React, { useCallback, useContext, useEffect } from "react";
 import { useTranslation } from "translation";
-import config from "config";
+
 export interface AuthContextValue {
   login: (connector: Connector) => Promise<void>;
   logOut: () => void;

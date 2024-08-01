@@ -63,3 +63,5 @@ storybook-static
 
 package-lock.json
 
+# History 
+/.history

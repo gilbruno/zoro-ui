@@ -8,6 +8,13 @@ export enum ZkChainId {
   'TESTNET' = 280,
 }
 
+
+export enum PolygonChainId {
+  'MAINNET' = 137,
+  'TESTNET' = 80002,
+}
+
+
 export interface Token {
   symbol: string;
   decimals: number;

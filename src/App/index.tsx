@@ -49,6 +49,18 @@ const chains = [
     token: 'ETH',
     label: 'zkSync Era Mainnet',
     rpcUrl: `https://mainnet.era.zksync.io `
+  },
+  {
+    id: '0x89', 
+    token: 'MATIC',
+    label: 'Polygon Mainnet',
+    rpcUrl: `https://polygon-rpc.com/` 
+  },
+  {
+    id: '0x13882', 
+    token: 'MATIC',
+    label: 'Polygon Testnet',
+    rpcUrl: `https://rpc.ankr.com/polygon_amoy/`
   }
 ]
 

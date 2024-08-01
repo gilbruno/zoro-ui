@@ -9,6 +9,7 @@ export enum Subdirectory {
   MARKETS = '/markets/:poolComptrollerAddress',
   MARKET = '/market/:vTokenAddress',
   NOTFOUND = '/404',
+  POLYGON = '/polygon'
   //HISTORY = '/history',
   //VAULTS = '/vaults',
   //GOVERNANCE = '/governance',
@@ -31,6 +32,7 @@ const routeSubdirectories = {
     ? [Subdirectory.POOLS, Subdirectory.POOL, Subdirectory.MARKET]
     : [Subdirectory.MARKETS, Subdirectory.MARKET],
   notfound: [Subdirectory.NOTFOUND],
+  polygon: [Subdirectory.POLYGON]
   //governance: [Subdirectory.GOVERNANCE],
   //governanceProposal: [Subdirectory.GOVERNANCE, Subdirectory.PROPOSAL],
   //governanceLeaderBoard: [Subdirectory.GOVERNANCE, Subdirectory.LEADER_BOARD],

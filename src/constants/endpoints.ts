@@ -1,4 +1,4 @@
-import { ZkChainId, Environment } from 'types';
+import { ZkChainId, Environment, PolygonChainId } from 'types';
 
 export const API_ENDPOINT_URLS: Record<Environment, string> = {
   mainnet: 'https://api.zoroprotocol.com/api',
@@ -15,4 +15,14 @@ export const RPC_URLS: {
     'https://mainnet.era.zksync.io'
   ],
   [ZkChainId.TESTNET]: ['https://testnet.era.zksync.dev'],
+};
+
+
+export const POLYGON_RPC_URLS: {
+  [key: string]: string[];
+} = {
+  [PolygonChainId.MAINNET]: [
+    'https://rpc-mainnet.matic.network'
+  ],
+  [PolygonChainId.TESTNET]: ['https://rpc-amoy.polygon.technology'],
 };
