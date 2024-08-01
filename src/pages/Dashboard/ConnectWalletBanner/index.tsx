@@ -13,11 +13,17 @@ import { useConnectWallet } from "@web3-onboard/react";
 export interface ConnectWalletBannerUiProps {
   isWalletConnected: boolean;
   openAuthModal: () => void;
+  title: string
+  description: string
+  buttonLabel: string
 }
 
 export const ConnectWalletBannerUi: React.FC<ConnectWalletBannerUiProps> = ({
   isWalletConnected,
   openAuthModal,
+  title,
+  description,
+  buttonLabel,
   ...containerProps
 }) => {
   const { t } = useTranslation();
@@ -36,15 +42,15 @@ export const ConnectWalletBannerUi: React.FC<ConnectWalletBannerUiProps> = ({
     >
       <div css={styles.content}>
         <Typography variant="h1" css={styles.title} >
-          {t("dashboard.connectWalletBanner.title")}
+          {title}
         </Typography>
 
         <Typography css={styles.description} >
-          {t("dashboard.connectWalletBanner.description")}
+          {description}
         </Typography>
 
         <PrimaryButton css={styles.button} onClick={wallet ? openAuthModal : async () => await connect()} className="custom-btn-wrap">
-          {t("dashboard.connectWalletBanner.buttonLabel")}
+          {buttonLabel}
         </PrimaryButton>
       </div>
 
@@ -59,13 +65,22 @@ export const ConnectWalletBannerUi: React.FC<ConnectWalletBannerUiProps> = ({
   );
 };
 
-const ConnectWalletBanner: React.FC = () => {
+interface ConnectWalletProps {
+  title?: string,
+  description?: string
+  buttonLabel?: string
+}
+const ConnectWalletBanner: React.FC<ConnectWalletProps> = ({title, description, buttonLabel}) => {
   const { accountAddress, openAuthModal } = useAuth();
-
+  const { t } = useTranslation();
+  
   return (
     <ConnectWalletBannerUi
       isWalletConnected={!!accountAddress}
       openAuthModal={openAuthModal}
+      title={title ? title : t("dashboard.connectWalletBanner.title")}
+      description={description ? description : t("dashboard.connectWalletBanner.description")}
+      buttonLabel={buttonLabel ? buttonLabel : t("dashboard.connectWalletBanner.buttonLabel")}
     />
   );
 };

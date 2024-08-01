@@ -65,3 +65,6 @@ package-lock.json
 
 # History 
 /.history
+
+# Env files
+.env
